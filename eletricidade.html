@@ -144,18 +144,18 @@
                     if (ce.length == 0) {
                         potencia = Number(potenciasub1) - potenciasub3
                         resultado = Number(fe)/ Number(qe) + ` × 10^(${potencia})`
-                        respostas.innerHTML = ""
+                        respostas.innerHTML = resultado
 
                     } else if (fe.length == 0) {
                         potencia = Number(potenciasub0) + potenciasub3
                         resultado = Number(qe) * Number(ce) + ` × 10^(${potencia})`
-                        respostas.innerHTML = ""
+                        respostas.innerHTML = resultado
 
                     } else if (qe.length == 0) {
                         potencia = Number(potenciasub1) - Number(potenciasub0)
                         resultado = Number(fe)/ Number(ce) + ` × 10^(${potencia})`
-                        respostas.innerHTML = ""
-                        
+                        respostas.innerHTML = resultado
+
                     }
                     
                     var ce = document.getElementById("campoEle").value = ""
@@ -293,7 +293,6 @@
                     var cargaTrue = document.getElementById("qf").value
                     var resultado = ""
                     var sub = document.getElementById("submultiplos").value
-                    alert(`${campoEletrico} ${constante} ${cargaTrue} ${distanciaDois}`)
 
                     if(campoEletrico.length == 0) {
                         resultado = (Number(kv) * Number(cargaTrue))/ distanciaDois
