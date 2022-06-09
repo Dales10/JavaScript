@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletricidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Eletricidade</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                <label for="formula">Escolha a fórmula que deseja usar:</label>
+                <select name="formula" id="formula">
+                    <option selected disabled>Escolher</option>
+                    <option value="fe">Força Elétrica</option>
+                    <option value="ce">Campo Elétrico</option>
+                </select>
+                <input type="button" value="Selecionar" onclick="selecionar()">
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div id="res0"></div>
+        <div id="res1"></div>
+        <div id="res2"></div>
+        <div id="res3"></div>
+        <div id="res4"></div>
+    </section>
+
+    <section>
+        <div id="respostas"></div>
+    </section>
+
+    <footer>&copy;ECI Areial</footer>
+
+    <script src="script"></script>
+</body>
+</html>
