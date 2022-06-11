@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eletricidade</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="formulas.css">
+    <link rel="stylesheet" href="res.css">
+    <link rel="stylesheet" href="resultado.css">
 </head>
 <body>
     <header>
         <h1>Eletricidade</h1>
     </header>
 
-    <section>
+    <section class="selectEquacoes">
         <div>
             <p>
                 <label for="formula">Escolha a fórmula que deseja usar:</label>
@@ -21,22 +24,14 @@
                     <option value="fe">Força Elétrica</option>
                     <option value="ce">Campo Elétrico</option>
                 </select>
-                <input type="button" value="Selecionar" onclick="selecionar()">
+                <input type="button" value="Selecionar" id="selecionar" onclick="selecionar()">
             </p>
         </div>
     </section>
 
-    <section>
-        <div id="res0"></div>
-        <div id="res1"></div>
-        <div id="res2"></div>
-        <div id="res3"></div>
-        <div id="res4"></div>
-    </section>
+    <section id="res"></section>
 
-    <section>
-        <div id="respostas"></div>
-    </section>
+    <section id="resultado"></section>
 
     <footer>&copy;ECI Areial</footer>
 

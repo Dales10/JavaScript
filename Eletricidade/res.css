@@ -1,0 +1,120 @@
+#resAll{
+    color: rgb(13, 13, 68);
+    background-image: linear-gradient(to right, rgba(235,234,255,1) 0%, rgba(0,65,255,1) 100%);
+    width: 800px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+/*Estilo da Força Elétrico*/
+
+#lace0{
+    margin-left: 100px;
+}
+#lace1{
+    margin-left: 100px;
+}
+#lace2{
+    margin-left: 100px;
+}
+#lace3{
+    margin-left: 100px;
+}
+#lace4{
+    margin-left: 100px;
+}
+#campoEle{
+    border-radius: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+#inputcampoEle{
+    border-radius: 10px;
+    width: 69px;
+    text-align: center;
+}
+#forcaEle{
+    border-radius: 10px;
+    margin-left: 14px;
+    text-align: center;
+}
+#inputforcaEle{
+    border-radius: 10px;
+    width: 69px;
+    text-align: center;
+}
+#cargaProva{
+    border-radius: 11px;
+    margin-left: 11px;
+    text-align: center;
+}
+#submultiplos{
+    border-radius: 8px;
+    text-align: center;
+    height: 21.5px;
+    border-radius: 10px;
+}
+#calcular{
+    color: rgb(0, 0, 179);
+    margin-top: 20px;
+    margin-left: 370px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+/*Estilo do Campo Elétrico*/
+
+#lafe0{
+    margin-left: 100px;
+}
+#lafe1{
+    margin-left: 100px;
+}
+#lafe2{
+    margin-left: 100px;
+}
+#lafe3{
+    margin-left: 100px;
+}
+#lafe4{
+    margin-left: 100px;
+}
+#campoElefe{
+    border-radius: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+#constanteVacuo{
+    border-radius: 10px;
+    margin-left: 57px;
+    text-align: center;
+}
+#cargaFonte{
+    border-radius: 10px;
+    margin-left: 37px;
+    text-align: center;
+}
+#inputcampoElefe{
+    border-radius: 10px;
+    width: 65px;
+    text-align: center;
+}
+#inputConstante{
+    border-radius: 10px;
+    width: 65px;
+    text-align: center;
+}
+#distancia{
+    border-radius: 10px;
+    margin-left: 68px;
+    text-align: center;
+}
+#medida{
+    border-radius: 10px;
+    width: 73px;
+    height: 21.5px;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+.selectEquacoes{
+    color: rgb(13, 13, 68);
+    background-image: linear-gradient(to right, rgba(235,234,255,1) 0%, rgba(0,65,255,1) 100%);
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+}
+#formula{
+    border-radius: 8px;
+    color: rgb(0, 0, 179);
+    font-weight: bolder;
+    font-size: 14px;
+}
+#selecionar{
+    color: rgb(0, 0, 179);
+    border-radius: 8px;
+    font-weight: bolder;
+}
