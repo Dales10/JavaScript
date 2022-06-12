@@ -152,7 +152,6 @@ function selecionar() {
             var medida = document.querySelector("#comprimento").value
             var distancia = distance(medida, d2)
             var distancia2 = distance2(medida)
-            alert(potenciasub3)
 
             //Caso a carga fonte seja negativa, deixa o valor digitado positivo
             if (Number(qf) < 0) {
