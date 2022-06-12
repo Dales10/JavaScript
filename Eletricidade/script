@@ -2,6 +2,7 @@ function selecionar() {
 
             var select = document.getElementById("formula")
             var selected = select.value
+
             var la0 = document.createElement("label")
             var la1 = document.createElement("label")
             var la2 = document.createElement("label")
@@ -31,7 +32,6 @@ function selecionar() {
             erro.setAttribute("id", "erro")
             
             if (selected == "fe") {
-
                 la0.setAttribute("for", "campoEle")
                 la0.setAttribute("id", "lace0")
                 la0.innerHTML = "Digite o valor do <strong>Campo Elétrico (E)</strong>:"
@@ -48,7 +48,6 @@ function selecionar() {
                 la1.setAttribute("id", "lace1")
                 la1.innerHTML = "Digite o valor da <strong>Força Elétrica (Fe)</strong>:"
                 res1.appendChild(la1)
-                forcaEle = ""
                 var forcaEle = document.createElement("input")
                 forcaEle.setAttribute("id", "forcaEle")
                 res1.appendChild(forcaEle)
@@ -61,7 +60,6 @@ function selecionar() {
                 la2.setAttribute("id", "lace2")
                 la2.innerHTML = "Digite o valor da <strong>Carga de Prova (q)</strong>:"
                 res2.appendChild(la2)
-                cargaProva = ""
                 var cargaProva = document.createElement("input")
                 cargaProva.setAttribute("id", "cargaProva")
                 res2.appendChild(cargaProva)

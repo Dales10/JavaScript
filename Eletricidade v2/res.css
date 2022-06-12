@@ -1,4 +1,4 @@
-#resAll{
+#resTotal{
     color: rgb(13, 13, 68);
     background-image: linear-gradient(to right, rgba(235,234,255,1) 0%, rgba(0,65,255,1) 100%);
     width: 800px;
@@ -8,21 +8,6 @@
     border-radius: 20px;
     margin-top: 25px;
 }
-#lace0{
-    margin-left: 100px;
-}
-#lace1{
-    margin-left: 100px;
-}
-#lace2{
-    margin-left: 100px;
-}
-#lace3{
-    margin-left: 100px;
-}
-#lace4{
-    margin-left: 100px;
-}
 #campoEle{
     border-radius: 10px;
     margin-left: 10px;
@@ -30,7 +15,7 @@
 }
 #inputcampoEle{
     border-radius: 10px;
-    width: 69px;
+    width: 66px;
     text-align: center;
 }
 #forcaEle{
@@ -40,7 +25,7 @@
 }
 #inputforcaEle{
     border-radius: 10px;
-    width: 69px;
+    width: 66px;
     text-align: center;
 }
 #cargaProva{
@@ -52,28 +37,29 @@
     border-radius: 8px;
     text-align: center;
     height: 21.5px;
+    width: 72px;
     border-radius: 10px;
 }
 #calcular{
     color: rgb(0, 0, 179);
     margin-top: 20px;
-    margin-left: 370px;
+    margin-left: 350px;
     border-radius: 10px;
     font-weight: bolder;
 }
-#lafe0{
+#la0{
     margin-left: 100px;
 }
-#lafe1{
+#la1{
     margin-left: 100px;
 }
-#lafe2{
+#la2{
     margin-left: 100px;
 }
-#lafe3{
+#la3{
     margin-left: 100px;
 }
-#lafe4{
+#la4{
     margin-left: 100px;
 }
 #campoElefe{
@@ -106,9 +92,15 @@
     margin-left: 68px;
     text-align: center;
 }
-#medida{
+#comprimento{
     border-radius: 10px;
     width: 73px;
     height: 21.5px;
     text-align: center;
+}
+#limpar{
+    color: rgb(0, 0, 179);
+    font-weight: bolder;
+    border-radius: 10px;
+    margin-left: 100px;
 }

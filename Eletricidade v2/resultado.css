@@ -1,0 +1,20 @@
+#principal{
+    color: rgb(13, 13, 68);
+    background-image: linear-gradient(to right, rgba(235,234,255,1) 0%, rgba(0,65,255,1) 100%);
+    width: 780px;
+    margin: auto;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+#erro{
+    text-align: center;
+    text-transform: uppercase;
+}
+#respostas{
+    font-weight: bolder;
+    margin-top: 10px;
+    text-align: center;
+}

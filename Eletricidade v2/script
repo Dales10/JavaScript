@@ -1,0 +1,370 @@
+function selecionar() {
+    var select = document.getElementById("formula").value
+    let res = document.getElementById("res")
+    let resultado = document.querySelector("#resultado")
+
+    //Cria as divs que serão usadas no CSS da parte de 'resultado'
+    var principal = document.createElement("div")
+    principal.setAttribute("id", "principal")
+    var erro = document.createElement("div")
+    erro.setAttribute("id", "erro")
+    var respostas = document.createElement("div")
+    respostas.setAttribute("id", "respostas")
+    var resAll = document.createElement("div")
+
+    var label = ["la0", "la1", "la2", "la3", "la4"]
+    var resTodos = ["res0", "res1", "res2", "res3", "res4", "res5", "res6"]
+    
+    var potencia = ""
+    var valor = ""
+    var equacaoResultado = ""
+    var nan = ""
+    res.innerHTML = ""
+    resultado.innerHTML = ""
+
+    //Quarda as informações dos submultiplos em arrays
+    var submultiplos = document.createElement("select")
+    submultiplos.setAttribute("id", "submultiplos")
+    var submultiplo = ["normal", "mili", "micro", "nano", "pico"]
+    var submultiploSigla = ["none", "m -mili", "μ - micro", "n - nano", "p - pico"]
+
+    //Quarda as informaçõ~es das distâncias
+    var comprimento = document.createElement("select")
+    comprimento.setAttribute("id", "comprimento")
+    var distancia = ["km", "hm", "dam", "m", "dm", "cm", "mm"]
+
+    //Quarda as informaçõ~es das distâncias
+    var comprimento = document.createElement("select")
+    comprimento.setAttribute("id", "comprimento")
+    var distancia = ["km", "hm", "dam", "m", "dm", "cm", "mm"]
+
+    if (select == "fe") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["campoEle", "forcaEle", "cargaProva"]
+        var inputSecundario = ["inputcampoEle", "inputforcaEle"]
+        var text = ["Digite o valor do <strong>Campo Elétrico (E)</strong>:", "Digite o valor da <strong>Força Elétrica (Fe)</strong>:", "Digite o valor da <strong>Carga de Prova (q)</strong>:"]
+        inserir(2, label, inputPrincipal, inputSecundario, resTodos, text, 0)
+        sub(2, submultiplos, submultiplo, submultiploSigla, resTodos)
+
+        var buttonLimpar = limpar(resTodos[3])
+        var buttonCalcular = calcular(resTodos[4])
+        buttonLimpar.onclick = function () {
+            reset("ce")
+        }
+
+        //Executa os cálculos quando o botão de calcular é clickado
+        buttonCalcular.onclick = function () {
+            //Coleta as informações dos input e troca a vírgula pelo ponto quando tem
+            var ce = document.querySelector("#campoEle").value
+            ce = ce.replace(",", ".")
+            var fe = document.querySelector("#forcaEle").value
+            fe = fe.replace(",", ".")
+            var qe = document.querySelector("#cargaProva").value
+            qe = qe.replace(",", ".")
+
+            //Coleta as informações dos input das potências e demais dados adicionais
+            var potenciasub0 = document.querySelector("#inputcampoEle").value
+            var potenciasub1 = document.querySelector("#inputforcaEle").value
+            var potenciasub2 = document.querySelector("#submultiplos").value
+            var potenciasub3 = multisub(potenciasub2)
+
+            //Caso a carga de prova seja negativa, deixa o valor digitado positivo
+            if (Number(qe) < 0) {
+                qe = - Number(qe)
+            }
+            valor = Number("NaN")
+
+            //Parte resposánvel pelos cálculos com base nos dados coletados
+            if (ce.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
+                nan = Number(potenciasub1) - potenciasub3
+                valor =Number(fe)/ Number(qe)
+                if (isNaN(nan)) {
+                    potencia = ""
+                }
+                equacaoResultado = "E = " + valor + potencia + `<i>N/C</i>`
+                
+            } else if (fe.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub0) + potenciasub3})`
+                nan = Number(potenciasub0) + potenciasub3
+                valor = Number(qe) * Number(ce)
+                if (isNaN(nan)) {
+                    potencia = ""
+                }
+                equacaoResultado = "F = " + valor + potencia + `<i>N</i>`
+
+            } else if (qe.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub1) - Number(potenciasub0)})`
+                nan = Number(potenciasub1) - Number(potenciasub0)
+                valor = Number(fe)/ Number(ce)
+                if (nan == 0) {
+                    potencia = ""
+                }
+                equacaoResultado = "q = " + valor + potencia + `<i>C</i>`
+
+            }
+            erro.innerHTML = ""
+
+            //Verifica se os dados necessários para os cálculos foram digitados, e caso tenham sido, troca o ponta pela vírgula
+            if (isNaN(valor)){
+                erro.innerHTML = "<u><strong>[ERRO: Falta de dados]</strong></u>"
+                respostas.innerHTML = "Por favor insira os dados necessários para a equacão ser calculada."
+            } else {
+                respostas.innerHTML = equacaoResultado.replace(".", ",")
+            }
+            principal.appendChild(erro)
+            principal.appendChild(respostas)
+            resultado.appendChild(principal)
+        }
+
+    } else if (select == "ce") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["campoElefe", "constanteVacuo", "distancia", "cargaFonte"]
+        var inputSecundario = ["inputcampoElefe", "inputConstante"]
+        var text = ["Digite o valor do <strong>Campo Elétrico (E)</strong>:", "Digite o valor da <strong>Constante (K)</strong>:", "Digite o valor da <strong>Distancia (d)</strong>:", "Digite o valor da <strong>Carga Fonte (Q)</strong>:"]
+        inserir(3, label, inputPrincipal, inputSecundario, resTodos, text, 1)
+        sub(3, submultiplos, submultiplo, submultiploSigla, resTodos)
+        distancias1(2, comprimento, distancia, resTodos)
+
+        var buttonLimpar = limpar(resTodos[5])
+        var buttonCalcular = calcular(resTodos[6])
+        buttonLimpar.onclick = function () {
+            reset("fe")
+        }
+
+        //Executa os cálculos quando o botão de calcular é clickado
+        buttonCalcular.onclick = function () {
+            //Coleta as informações dos input e troca a vírgula pelo ponto quando tem
+            var ce = document.querySelector("#campoElefe").value
+            ce = ce.replace(",", ".")
+            var kv = document.querySelector("#constanteVacuo").value
+            kv = kv.replace(",", ".")
+            var d2 = document.querySelector("#distancia").value
+            d2 = d2.replace(",", ".")
+            var qf = document.querySelector("#cargaFonte").value
+            qf = qf.replace(",", ".")
+
+            //Coleta as informações dos input das potências e demais dados adicionais
+            var potenciasub0 = document.querySelector("#inputcampoElefe").value
+            var potenciasub1 = document.querySelector("#inputConstante").value
+            var potenciasub2 = document.querySelector("#submultiplos").value
+            var potenciasub3 = multisub(potenciasub2)
+            var medida = document.querySelector("#comprimento").value
+            var distancia = distance(medida, d2)
+            var distancia2 = distance2(medida)
+
+            //Caso a carga fonte seja negativa, deixa o valor digitado positivo
+            if (Number(qf) < 0) {
+                qf = - Number(qf)
+            }
+            valor = Number("NaN")
+
+            //Parte resposánvel pelos cálculos com base nos dados coletados
+            if (ce.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub1) + potenciasub3 - (distancia2 * 2)})`
+                nan = Number(potenciasub1) + potenciasub3 - (distancia2 * 2)
+                valor = (Number(kv) * Number(qf))/ (Number(d2)** 2)
+                if (isNaN(nan)) {
+                    potencia = ""
+                }
+                equacaoResultado = "E = " + valor + potencia + "<i>N/C</i>"
+
+            } else if (kv.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
+                valor = ((distancia** 2) * Number(ce))/ qf
+                nan = Number(potenciasub1) - potenciasub3
+                if (isNaN(nan)) {
+                    potencia = ""
+                }
+                equacaoResultado = "K = " + valor + potencia + "<i>N × m²/C²</i>"
+
+            } else if (qf.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
+                valor = ((distancia** 2) * Number(ce))/ Number(kv)
+                nan = Number(potenciasub1) - potenciasub3
+                if (isNaN(nan)) {
+                    potencia = ""
+                }
+                equacaoResultado = "Q = " + valor + potencia + "<i>C</i>"
+
+            } else if (d2.length == 0) {
+                potencia = ` × 10^(${Number(potenciasub3) + Number(potenciasub1) - Number(potenciasub0)})`
+                valor = (Number(kv) * Number(qf))/ Number(ce)
+                nan  = Number(potenciasub3) + Number(potenciasub1) - Number(potenciasub0)
+                if (isNaN(nan)) {
+                    potencia = ""
+                }
+                equacaoResultado = "d² = " + valor + potencia + "<i>m²</i>"
+
+            }
+            erro.innerHTML = ""
+
+            //Verifica se os dados necessários para os cálculos foram digitados, e caso tenham sido, troca o ponta pela vírgula
+            if (isNaN(valor)){
+                erro.innerHTML = "<u><strong>[ERRO: Falta de dados]</strong></u>"
+                respostas.innerHTML = "Por favor insira os dados necessários para a equacão ser calculada."
+            } else{
+                respostas.innerHTML = equacaoResultado.replace(".", ",")
+            }
+            principal.appendChild(erro)
+            principal.appendChild(respostas)
+            resultado.appendChild(principal)
+            
+        }
+    }
+}
+
+
+//Adiciona os label e input
+function inserir(a, label, inputPrincipal, inputSecundario, resTodos, text, d) {
+    var resTotal = document.createElement("div")
+    resTotal.setAttribute("id", "resTotal")
+    for(let c = 0; c <= a; c++){
+        var la = document.createElement("label")
+        la.setAttribute("for", inputPrincipal[c])
+        la.setAttribute("id", label[c])
+        la.innerHTML = (text[c])
+        var resAll = document.createElement("div")
+        resAll.setAttribute("id", resTodos[c])
+        resAll.appendChild(la)
+        res.appendChild(resAll)
+        var principal = document.createElement("input")
+        principal.setAttribute("id", inputPrincipal[c])
+        resAll.appendChild(principal)
+        resTotal.appendChild(resAll)
+        
+        var f = c
+
+        //Adiciona os input onde serão colocados os números da potência de base 10
+        if (f + d < a) {
+            var secundario = document.createElement("input")
+            secundario.setAttribute("id", inputSecundario[c])
+            resAll.appendChild(secundario)
+            resTotal.appendChild(resAll)
+        }
+    }
+    res.appendChild(resTotal)
+}
+
+//Cria os options do select de submultiplos
+function sub(z, submultiplos, submultiplo, submultiploSigla, resTodos) {
+    for(r = 0; r < 5; r++) {
+        var option = document.createElement("option")
+        option.setAttribute("value", submultiplo[r])
+        option.text = (submultiploSigla[r])
+        submultiplos.appendChild(option)
+    }
+    var res0 = document.getElementById(resTodos[z])
+    res0.appendChild(submultiplos)
+}
+
+//Cria os options do select de comprimento
+function distancias1(z, comprimento, distancia, resTodos) {
+    for(r = 0; r < 7; r++){
+        var option = document.createElement("option")
+        option.setAttribute("value", distancia[r])
+        option.text = (distancia[r])
+        comprimento.appendChild(option)
+    }
+    var res0 = document.getElementById(resTodos[z])
+    res0.appendChild(comprimento)
+    
+}
+
+//Adiciona o botão de Limpar
+function limpar(a) {
+    var buttonLimpar = document.createElement("input")
+    buttonLimpar.setAttribute("type", "button")
+    buttonLimpar.setAttribute("id", "limpar")
+    buttonLimpar.setAttribute("value", "Limpar")
+    var resAll = document.createElement("div")
+    resAll.setAttribute("id", a)
+    resAll.appendChild(buttonLimpar)
+    resTotal.appendChild(resAll)
+    return buttonLimpar
+}
+
+function reset(a) {
+    if (a == "ce") {
+        ce = document.querySelector("#campoEle").value = ""
+        fe = document.querySelector("#forcaEle").value = ""
+        qe = document.querySelector("#cargaProva").value = ""
+        potenciasub0 = document.querySelector("#inputcampoEle").value = ""
+        potenciasub1 = document.querySelector("#inputforcaEle").value = ""
+
+    } else if (a == "fe") {
+        ce = document.querySelector("#campoElefe").value = ""
+        kv = document.querySelector("#constanteVacuo").value = ""
+        d2 = document.querySelector("#distancia").value = ""
+        qf = document.querySelector("#cargaFonte").value = ""
+        potenciasub0 = document.querySelector("#inputcampoElefe").value = ""
+        potenciasub1 = document.querySelector("#inputConstante").value = ""
+
+    }
+    resultado = document.querySelector("#resultado").innerHTML = ""
+
+}
+
+//Adiciona o botão de Calcular
+function calcular(a) {
+    var buttonCalcular = document.createElement("input")
+    buttonCalcular.setAttribute("type", "button")
+    buttonCalcular.setAttribute("id", "calcular")
+    buttonCalcular.setAttribute("value", "Calcular")
+    var resAll = document.createElement("div")
+    resAll.setAttribute("id", a)
+    resAll.appendChild(buttonCalcular)
+    resTotal.appendChild(resAll)
+    return buttonCalcular
+}
+
+//Troca o valor da option selecionada pelo número da potência de base 10 correspondente
+function multisub(a){
+    if (a == "mili") {
+        return -3
+    } else if (a == "micro") {
+        return -6
+    } else if (a == "nano") {
+        return -9
+    } else if (a == "pico") {
+        return -12
+    }
+}
+
+//Passa o valor colocado para a unidade de metros
+function distance(a, b) {
+    if(a == "km") {
+        return b * 1000
+    } else if (a == "hm") {
+        return b * 100
+    } else if (a == "dam") {
+        return b * 10
+    } else if (a == "m") {
+        return b
+    } else if (a == "dm") {
+        return b / 10
+    } else if (a == "cm") {
+        return b / 100
+    } else if (a == "mm") {
+        return b / 1000
+    }
+}
+
+//Retorna o número correspondente da potência de base 10 do valor selecionado
+function distance2(a) {
+    if(a == "km") {
+        return 3
+    } else if (a == "hm") {
+        return 2
+    } else if (a == "dam") {
+        return 1
+    } else if (a == "m") {
+        return 0
+    } else if (a == "dm") {
+        return -1
+    } else if (a == "cm") {
+        return -2
+    } else if (a == "mm") {
+        return -3
+    }
+}
