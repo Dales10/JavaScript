@@ -82,7 +82,7 @@ function selecionar() {
                 if (isNaN(nan)) {
                     potencia = ""
                 }
-                equacaoResultado = "E = " + valor + potencia + `<i>N/C</i>`
+                equacaoResultado = "E = " + valor + potencia + " <i>N/C</i>"
                 
             } else if (fe.length == 0) {
                 potencia = ` × 10^(${Number(potenciasub0) + potenciasub3})`
@@ -91,7 +91,7 @@ function selecionar() {
                 if (isNaN(nan)) {
                     potencia = ""
                 }
-                equacaoResultado = "F = " + valor + potencia + `<i>N</i>`
+                equacaoResultado = "F = " + valor + potencia + " <i>N</i>"
 
             } else if (qe.length == 0) {
                 potencia = ` × 10^(${Number(potenciasub1) - Number(potenciasub0)})`
@@ -100,7 +100,7 @@ function selecionar() {
                 if (nan == 0) {
                     potencia = ""
                 }
-                equacaoResultado = "q = " + valor + potencia + `<i>C</i>`
+                equacaoResultado = "q = " + valor + potencia + " <i>C</i>"
 
             }
             erro.innerHTML = ""
@@ -135,23 +135,27 @@ function selecionar() {
         //Executa os cálculos quando o botão de calcular é clickado
         buttonCalcular.onclick = function () {
             //Coleta as informações dos input e troca a vírgula pelo ponto quando tem
-            var ce = document.querySelector("#campoElefe").value
-            ce = ce.replace(",", ".")
-            var kv = document.querySelector("#constanteVacuo").value
-            kv = kv.replace(",", ".")
-            var d2 = document.querySelector("#distancia").value
-            d2 = d2.replace(",", ".")
-            var qf = document.querySelector("#cargaFonte").value
-            qf = qf.replace(",", ".")
+            var ce = document.querySelector("#campoElefe").value.replace(",", ".")
+            var kc = document.querySelector("#constanteVacuo").value.replace(",", ".")
+            var d2 = document.querySelector("#distancia").value.replace(",", ".")
+            var qf = document.querySelector("#cargaFonte").value.replace(",", ".")
 
             //Coleta as informações dos input das potências e demais dados adicionais
             var potenciasub0 = document.querySelector("#inputcampoElefe").value
-            var potenciasub1 = document.querySelector("#inputConstante").value
+            var potenciakc = document.querySelector("#inputConstante").value
             var potenciasub2 = document.querySelector("#submultiplos").value
             var potenciasub3 = multisub(potenciasub2)
             var medida = document.querySelector("#comprimento").value
             var distancia = distance(medida, d2)
             var distancia2 = distance2(medida)
+
+            //Se não for digitado um valor para K, será atribuído o valor 9 para ele e 9 para a sua potência
+            if(kc.length == 0) {
+               var kv = 9
+            }
+            if(potenciakc.length == 0) {
+               var potenciasub1 = 9
+            }
 
             //Caso a carga fonte seja negativa, deixa o valor digitado positivo
             if (Number(qf) < 0) {
@@ -167,16 +171,16 @@ function selecionar() {
                 if (isNaN(nan)) {
                     potencia = ""
                 }
-                equacaoResultado = "E = " + valor + potencia + "<i>N/C</i>"
+                equacaoResultado = "E = " + valor + potencia + " <i>N/C</i>"
 
-            } else if (kv.length == 0) {
-                potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
+            } else if (ce.length != 0 && qf.length != 0 && d2.length != 0 && kc.length == 0 && potenciakc.length == 0) {
+                potencia = ` × 10^(${Number(distancia2) * 2 + Number(potenciasub0) - potenciasub3})`
                 valor = ((distancia** 2) * Number(ce))/ qf
-                nan = Number(potenciasub1) - potenciasub3
+                nan = Number(distancia2) * 2 + Number(potenciasub0) - potenciasub3
                 if (isNaN(nan)) {
                     potencia = ""
                 }
-                equacaoResultado = "K = " + valor + potencia + "<i>N × m²/C²</i>"
+                equacaoResultado = "K = " + valor + potencia + " <i>N × m²/C²</i>"
 
             } else if (qf.length == 0) {
                 potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
@@ -185,7 +189,7 @@ function selecionar() {
                 if (isNaN(nan)) {
                     potencia = ""
                 }
-                equacaoResultado = "Q = " + valor + potencia + "<i>C</i>"
+                equacaoResultado = "Q = " + valor + potencia + " <i>C</i>"
 
             } else if (d2.length == 0) {
                 potencia = ` × 10^(${Number(potenciasub3) + Number(potenciasub1) - Number(potenciasub0)})`
@@ -194,7 +198,10 @@ function selecionar() {
                 if (isNaN(nan)) {
                     potencia = ""
                 }
-                equacaoResultado = "d² = " + valor + potencia + "<i>m²</i>"
+                var valor1 = Math.sqrt(valor)
+                var potencia1 = ` × 10^(${(Number(potenciasub3) + Number(potenciasub1) - Number(potenciasub0))/ 2})`
+                equacaoResultado = "d² = " + valor + potencia + " <i>m²</i>"
+                equacaoResultado += "<br>d = " + valor1 + potencia1 + " <i>m</i>"
 
             }
             erro.innerHTML = ""
@@ -230,6 +237,9 @@ function inserir(a, label, inputPrincipal, inputSecundario, resTodos, text, d) {
         res.appendChild(resAll)
         var principal = document.createElement("input")
         principal.setAttribute("id", inputPrincipal[c])
+        if(inputPrincipal[c] == "constanteVacuo") {
+            principal.setAttribute("placeholder", "9") 
+         }
         resAll.appendChild(principal)
         resTotal.appendChild(resAll)
         
@@ -239,6 +249,9 @@ function inserir(a, label, inputPrincipal, inputSecundario, resTodos, text, d) {
         if (f + d < a) {
             var secundario = document.createElement("input")
             secundario.setAttribute("id", inputSecundario[c])
+            if(inputSecundario[c] == "inputConstante") {
+               secundario.setAttribute("placeholder", "10^(9)") 
+            }
             resAll.appendChild(secundario)
             resTotal.appendChild(resAll)
         }
