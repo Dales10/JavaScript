@@ -156,6 +156,8 @@ function selecionar() {
             if(potenciakc.length == 0) {
                var potenciasub1 = 9
             }
+            kv = kc
+            potencia1 = potenciakc
 
             //Caso a carga fonte seja negativa, deixa o valor digitado positivo
             if (Number(qf) < 0) {
@@ -183,9 +185,9 @@ function selecionar() {
                 equacaoResultado = "K = " + valor + potencia + " <i>N × m²/C²</i>"
 
             } else if (qf.length == 0) {
-                potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
+                potencia = ` × 10^(${distancia2 + Number(potenciasub0) - Number(potencia1)})`
                 valor = ((distancia** 2) * Number(ce))/ Number(kv)
-                nan = Number(potenciasub1) - potenciasub3
+                nan = distancia2 + Number(potenciasub0) - Number(potencia1)
                 if (isNaN(nan)) {
                     potencia = ""
                 }
@@ -277,6 +279,9 @@ function distancias1(z, comprimento, distancia, resTodos) {
         var option = document.createElement("option")
         option.setAttribute("value", distancia[r])
         option.text = (distancia[r])
+        if(distancia[r] == "m"){
+            option.selected = true
+        }
         comprimento.appendChild(option)
     }
     var res0 = document.getElementById(resTodos[z])
