@@ -149,6 +149,9 @@ function selecionar() {
             var distancia = distance(medida, d2)
             var distancia2 = distance2(medida)
 
+            kv = kc
+            potencia1 = potenciakc
+
             //Se não for digitado um valor para K, será atribuído o valor 9 para ele e 9 para a sua potência
             if(kc.length == 0) {
                var kv = 9
@@ -156,8 +159,10 @@ function selecionar() {
             if(potenciakc.length == 0) {
                var potenciasub1 = 9
             }
-            kv = kc
-            potencia1 = potenciakc
+            
+            if(potenciasub0.length == 0){
+                potenciasub0 = 0
+            }
 
             //Caso a carga fonte seja negativa, deixa o valor digitado positivo
             if (Number(qf) < 0) {
@@ -185,9 +190,9 @@ function selecionar() {
                 equacaoResultado = "K = " + valor + potencia + " <i>N × m²/C²</i>"
 
             } else if (qf.length == 0) {
-                potencia = ` × 10^(${distancia2 + Number(potenciasub0) - Number(potencia1)})`
+                potencia = ` × 10^(${distancia2 + Number(potenciasub0) - Number(potenciasub1)})`
                 valor = ((distancia** 2) * Number(ce))/ Number(kv)
-                nan = distancia2 + Number(potenciasub0) - Number(potencia1)
+                nan = distancia2 + Number(potenciasub0) - Number(potenciasub1)
                 if (isNaN(nan)) {
                     potencia = ""
                 }
