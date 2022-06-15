@@ -22,12 +22,6 @@ function selecionar() {
     res.innerHTML = ""
     resultado.innerHTML = ""
 
-    //Quarda as informações dos submultiplos em arrays
-    var submultiplos = document.createElement("select")
-    submultiplos.setAttribute("id", "submultiplos")
-    var submultiplo = ["normal", "mili", "micro", "nano", "pico"]
-    var submultiploSigla = ["none", "m -mili", "μ - micro", "n - nano", "p - pico"]
-
     //Quarda as informaçõ~es das distâncias
     var comprimento = document.createElement("select")
     comprimento.setAttribute("id", "comprimento")
@@ -38,13 +32,13 @@ function selecionar() {
     comprimento.setAttribute("id", "comprimento")
     var distancia = ["km", "hm", "dam", "m", "dm", "cm", "mm"]
 
-    if (select == "fe") {
+    if (select == "Fe") {
         //Quardam as informações em arrays que serão usadas nos for
         var inputPrincipal = ["campoEle", "forcaEle", "cargaProva"]
         var inputSecundario = ["inputcampoEle", "inputforcaEle"]
         var text = ["Digite o valor do <strong>Campo Elétrico (E)</strong>:", "Digite o valor da <strong>Força Elétrica (Fe)</strong>:", "Digite o valor da <strong>Carga de Prova (q)</strong>:"]
-        inserir(2, label, inputPrincipal, inputSecundario, resTodos, text, 0)
-        sub(2, submultiplos, submultiplo, submultiploSigla, resTodos)
+        inserir(2, label, inputPrincipal, inputSecundario, resTodos, text, 1)
+        sub(2, resTodos, 0)
 
         var buttonLimpar = limpar(resTodos[3])
         var buttonCalcular = calcular(resTodos[4])
@@ -78,7 +72,7 @@ function selecionar() {
             if (ce.length == 0) {
                 potencia = ` × 10^(${Number(potenciasub1) - potenciasub3})`
                 nan = Number(potenciasub1) - potenciasub3
-                valor =Number(fe)/ Number(qe)
+                valor = Number(fe)/ Number(qe)
                 if (isNaN(nan)) {
                     potencia = ""
                 }
@@ -117,13 +111,13 @@ function selecionar() {
             resultado.appendChild(principal)
         }
 
-    } else if (select == "ce") {
+    } else if (select == "E-K") {
         //Quardam as informações em arrays que serão usadas nos for
         var inputPrincipal = ["campoElefe", "constanteVacuo", "distancia", "cargaFonte"]
         var inputSecundario = ["inputcampoElefe", "inputConstante"]
         var text = ["Digite o valor do <strong>Campo Elétrico (E)</strong>:", "Digite o valor da <strong>Constante (K)</strong>:", "Digite o valor da <strong>Distancia (d)</strong>:", "Digite o valor da <strong>Carga Fonte (Q)</strong>:"]
         inserir(3, label, inputPrincipal, inputSecundario, resTodos, text, 1)
-        sub(3, submultiplos, submultiplo, submultiploSigla, resTodos)
+        sub(3, resTodos, 0)
         distancias1(2, comprimento, distancia, resTodos)
 
         var buttonLimpar = limpar(resTodos[5])
@@ -225,7 +219,90 @@ function selecionar() {
             resultado.appendChild(principal)
             
         }
+    } else if (select == "V-Epe") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["V-V-Epe", "Epe-V-Epe", "q-V-Epe"]
+        var inputSecundario = ["inV-V-Epe", "inEpe-V-Epe"]
+        var text = ["Digite o valor do <strong>Potencial Elétrico (V)</strong>:", "Digite o valor da <strong>Energia Potencial Elétrica (Epe)</strong>:", "Digite o valor da <strong>Carga de Prova (q)</strong>:"]
+        inserir(2, label, inputPrincipal, inputSecundario, resTodos, text, 1)
+        sub(2, resTodos, 1)
+
+        var buttonLimpar = limpar(resTodos[3])
+        var buttonCalcular = calcular(resTodos[4])
+        buttonLimpar.onclick = function () {
+            reset("fe")
+        }
+
+        //Executa os cálculos quando o botão de calcular é clickado
+        buttonCalcular.onclick = function () {
+            //Coleta as informações dos input e troca a vírgula pelo ponto quando tem
+            var V = document.querySelector("#V-V-Epe").value.replace(",", ".")
+            var Epe = document.querySelector("#Epe-V-Epe").value.replace(",", ".")
+            var q = document.querySelector("#q-V-Epe").value.replace(",", ".")
+            
+        }
+
+    } else if (select == "V-K") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["V-V-K", "K-V-K", "Q-V-K", "d-V-K"]
+        var inputSecundario = ["inV-V-K", "inK-V-K"]
+        var text = ["Digite o valor do <strong>Potencial Elétrico (V)</strong>:", "Digite o valor da <strong>Constante Eletrostática do Vácuo (K)</strong>:", "Digite o valor da <strong>Carga Fonte (Q)</strong>:", "Digite o valor da <strong>Distância (d)</strong>:"]
+        inserir(3, label, inputPrincipal, inputSecundario, resTodos, text, 1)
+        sub(2, resTodos, 0)
+        distancias1(3, comprimento, distancia, resTodos)
+
+        var buttonLimpar = limpar(resTodos[4])
+        var buttonCalcular = calcular(resTodos[5])
+        buttonLimpar.onclick = function () {
+            reset("fe")
+        }
+
+    } else if (select == "Epe") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["Epe-Epe", "K-Epe", "Q-Epe", "q-Epe", "d-Epe"]
+        var inputSecundario = ["inEpe-Epe", "inK-Epe"]
+        var text = ["Digite o valor da <strong>Energia Potencial Elétrica (E)</strong>:", "Digite o valor da <strong>Constante Eletrostática do Vácuo (K)</strong>:", "Digite o valor da <strong>Carga Fonte (Q)</strong>:", "Digite o valor da <strong>Carga de Prova (q)</strong>:", "Digite o valor da <strong>Distância (d)</strong>:"]
+        inserir(4, label, inputPrincipal, inputSecundario, resTodos, text, 1)
+        sub(2, resTodos, 0)
+        sub(3, resTodos, 1)
+        distancias1(4, comprimento, distancia, resTodos)
+
+        var buttonLimpar = limpar(resTodos[5])
+        var buttonCalcular = calcular(resTodos[6])
+        buttonLimpar.onclick = function () {
+            reset("fe")
+        }
+
+    } else if (select == "tau") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["tau-tau", "Va-tau", "Vb-tau", "q-tau"]
+        var inputSecundario = ["intau-tau", "inVa-tau", "inVb-tau"]
+        var text = ["Digite o valor do <strong>Trabalho (τ)</strong>:", "Digite o valor do <strong>Potencial Elétrico A (Va)</strong>:", "Digite o valor do <strong>Potencial Elétrico B (Vb)</strong>:", "Digite o valor da <strong>Carga de Prova (q)</strong>:"]
+        inserir(3, label, inputPrincipal, inputSecundario, resTodos, text, 2)
+        sub(3, resTodos, 0)
+
+        var buttonLimpar = limpar(resTodos[4])
+        var buttonCalcular = calcular(resTodos[5])
+        buttonLimpar.onclick = function () {
+            reset("fe")
+        }
+
+    } else if (select == "E-U") {
+        //Quardam as informações em arrays que serão usadas nos for
+        var inputPrincipal = ["E-E-U", "Va-E-U", "Vb-E-U", "d-E-U"]
+        var inputSecundario = ["inE-E-U", "inVa-E-U", "inVb-E-U", "ind-E-U"]
+        var text = ["Digite o valor do <strong>Campo Elétrico (E)</strong>:", "Digite o valor do <strong>Potencial Elétrico A (Va)</strong>:", "Digite o valor do <strong>Potencial Elétrico B (Vb)</strong>:", "Digite o valor da <strong>Distância (d)</strong>:"]
+        inserir(3, label, inputPrincipal, inputSecundario, resTodos, text, 2)
+        distancias1(3, comprimento, distancia, resTodos)
+
+        var buttonLimpar = limpar(resTodos[4])
+        var buttonCalcular = calcular(resTodos[5])
+        buttonLimpar.onclick = function () {
+            reset("fe")
+        }
+
     }
+
 }
 
 
@@ -253,7 +330,7 @@ function inserir(a, label, inputPrincipal, inputSecundario, resTodos, text, d) {
         var f = c
 
         //Adiciona os input onde serão colocados os números da potência de base 10
-        if (f + d < a) {
+        if (f <= d) {
             var secundario = document.createElement("input")
             secundario.setAttribute("id", inputSecundario[c])
             if(inputSecundario[c] == "inputConstante") {
@@ -267,7 +344,16 @@ function inserir(a, label, inputPrincipal, inputSecundario, resTodos, text, d) {
 }
 
 //Cria os options do select de submultiplos
-function sub(z, submultiplos, submultiplo, submultiploSigla, resTodos) {
+function sub(z, resTodos, d) {
+    //Quarda as informações dos submultiplos em arrays
+    var submultiplos = document.createElement("select")
+    submultiplos.setAttribute("id", "submultiplos0")
+    if (d >= 1) {
+        submultiplos.setAttribute("id", "submultiplos1")
+    }
+    var submultiplo = ["normal", "mili", "micro", "nano", "pico"]
+    var submultiploSigla = ["none", "m -mili", "μ - micro", "n - nano", "p - pico"]
+
     for(r = 0; r < 5; r++) {
         var option = document.createElement("option")
         option.setAttribute("value", submultiplo[r])

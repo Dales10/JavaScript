@@ -33,7 +33,14 @@
     margin-left: 11px;
     text-align: center;
 }
-#submultiplos{
+#submultiplos0{
+    border-radius: 8px;
+    text-align: center;
+    height: 21.5px;
+    width: 72px;
+    border-radius: 10px;
+}
+#submultiplos1{
     border-radius: 8px;
     text-align: center;
     height: 21.5px;
