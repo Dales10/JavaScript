@@ -1,113 +1,306 @@
 #resTotal{
     color: rgb(13, 13, 68);
     background-image: linear-gradient(to right, rgba(235,234,255,1) 0%, rgba(0,65,255,1) 100%);
-    width: 800px;
+    width: 900px;
     margin: auto;
     padding-top: 20px;
     padding-bottom: 10px;
     border-radius: 20px;
     margin-top: 25px;
 }
-#campoEle{
-    border-radius: 10px;
-    margin-left: 10px;
-    text-align: center;
-}
-#inputcampoEle{
-    border-radius: 10px;
-    width: 66px;
-    text-align: center;
-}
-#forcaEle{
-    border-radius: 10px;
-    margin-left: 14px;
-    text-align: center;
-}
-#inputforcaEle{
-    border-radius: 10px;
-    width: 66px;
-    text-align: center;
-}
-#cargaProva{
-    border-radius: 11px;
-    margin-left: 11px;
-    text-align: center;
-}
 #submultiplos0{
-    border-radius: 8px;
     text-align: center;
     height: 21.5px;
-    width: 72px;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 #submultiplos1{
-    border-radius: 8px;
     text-align: center;
     height: 21.5px;
-    width: 72px;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+#comprimento{
+    text-align: center;
+    height: 21.5px;
+    border-radius: 6px;
+    width: 128px;
 }
 #calcular{
     color: rgb(0, 0, 179);
     margin-top: 20px;
-    margin-left: 350px;
+    margin-left: 410px;
     border-radius: 10px;
     font-weight: bolder;
-}
-#la0{
-    margin-left: 100px;
-}
-#la1{
-    margin-left: 100px;
-}
-#la2{
-    margin-left: 100px;
-}
-#la3{
-    margin-left: 100px;
-}
-#la4{
-    margin-left: 100px;
-}
-#campoElefe{
-    border-radius: 10px;
-    margin-left: 10px;
-    text-align: center;
-}
-#constanteVacuo{
-    border-radius: 10px;
-    margin-left: 57px;
-    text-align: center;
-}
-#cargaFonte{
-    border-radius: 10px;
-    margin-left: 37px;
-    text-align: center;
-}
-#inputcampoElefe{
-    border-radius: 10px;
-    width: 65px;
-    text-align: center;
-}
-#inputConstante{
-    border-radius: 10px;
-    width: 65px;
-    text-align: center;
-}
-#distancia{
-    border-radius: 10px;
-    margin-left: 68px;
-    text-align: center;
-}
-#comprimento{
-    border-radius: 10px;
-    width: 73px;
-    height: 21.5px;
-    text-align: center;
 }
 #limpar{
     color: rgb(0, 0, 179);
     font-weight: bolder;
     border-radius: 10px;
-    margin-left: 100px;
+}
+
+.centralizar1{
+    margin-left: 130px;
+}
+.centralizar2{
+    margin-left: 140px;
+}
+.centralizar3{
+    margin-left: 85px;
+}
+.centralizar4{
+    margin-left: 55px;
+}
+.centralizar5{
+    margin-left: 55px;
+}
+.centralizar6{
+    margin-left: 112px;
+}
+.centralizar7{
+    margin-left: 110px;
+}
+
+.clear1{
+    margin-left: 130px;
+}
+.clear2{
+    margin-left: 140px;
+}
+.clear3{
+    margin-left: 85px;
+}
+.clear4{
+    margin-left: 55px;
+}
+.clear5{
+    margin-left: 55px;
+}
+.clear6{
+    margin-left: 112px;
+}
+.clear7{
+    margin-left: 110px;
+}
+
+
+/*Parte responsável pela estiização dos input*/
+#E-Fe{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#Fe-Fe{
+    border-radius: 6px;
+    margin-left: 14px;
+    text-align: center;
+}
+#q-Fe{
+    border-radius: 6px;
+    margin-left: 11px;
+    text-align: center;
+}
+#inE-Fe{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inFe-Fe{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
+#E-E-K{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#K-E-K{
+    border-radius: 6px;
+    margin-left: 54px;
+    text-align: center;
+}
+#d-E-K{
+    border-radius: 6px;
+    margin-left: 65px;
+    text-align: center;
+}
+#Q-E-K{
+    border-radius: 6px;
+    margin-left: 36px;
+    text-align: center;
+}
+#inE-E-K{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inK-E-K{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
+#V-V-Epe{
+    border-radius: 6px;
+    margin-left: 105px;
+    text-align: center;
+}
+#Epe-V-Epe{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#q-V-Epe{
+    border-radius: 6px;
+    margin-left: 125px;
+    text-align: center;
+}
+#inV-V-Epe{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inEpe-V-Epe{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
+#V-V-K{
+    border-radius: 6px;
+    margin-left: 152.5px;
+    text-align: center;
+}
+#K-V-K{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#Q-V-K{
+    border-radius: 6px;
+    margin-left: 198px;
+    text-align: center;
+}
+#d-V-K{
+    border-radius: 6px;
+    margin-left: 227px;
+    text-align: center;
+}
+#inV-V-K{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inK-V-K{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
+#Epe-Epe{
+    border-radius: 6px;
+    margin-left: 80px;
+    text-align: center;
+}
+#K-Epe{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#Q-Epe{
+    border-radius: 6px;
+    margin-left: 198px;
+    text-align: center;
+}
+#q-Epe{
+    border-radius: 6px;
+    margin-left: 173px;
+    text-align: center;
+}
+#d-Epe{
+    border-radius: 6px;
+    margin-left: 227px;
+    text-align: center;
+}
+#inEpe-Epe{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inK-Epe{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
+#tau-tau{
+    border-radius: 6px;
+    margin-left: 123.5px;
+    text-align: center;
+}
+#Va-tau{
+    border-radius: 6px;
+    margin-left: 14px;
+    text-align: center;
+}
+#Vb-tau{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#q-tau{
+    border-radius: 6px;
+    margin-left: 61px;
+    text-align: center;
+}
+#intau-tau{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inVa-tau{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inVb-tau{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
+#E-E-U{
+    border-radius: 6px;
+    margin-left: 60.5px;
+    text-align: center;
+}
+#Va-E-U{
+    border-radius: 6px;
+    margin-left: 14px;
+    text-align: center;
+}
+#Vb-E-U{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#d-E-U{
+    border-radius: 6px;
+    margin-left: 116px;
+    text-align: center;
+}
+#inE-E-U{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inVa-E-U{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inVb-E-U{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
 }
