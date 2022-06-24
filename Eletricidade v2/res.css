@@ -37,6 +37,9 @@
     border-radius: 10px;
 }
 
+.centralizar0{
+    margin-left: 140px;
+}
 .centralizar1{
     margin-left: 130px;
 }
@@ -53,12 +56,15 @@
     margin-left: 55px;
 }
 .centralizar6{
-    margin-left: 112px;
+    margin-left: 108px;
 }
 .centralizar7{
-    margin-left: 110px;
+    margin-left: 80px;
 }
 
+.clear0{
+    margin-left: 140px
+}
 .clear1{
     margin-left: 130px;
 }
@@ -75,14 +81,50 @@
     margin-left: 55px;
 }
 .clear6{
-    margin-left: 112px;
+    margin-left: 108px;
 }
 .clear7{
-    margin-left: 110px;
+    margin-left: 80px;
 }
 
 
 /*Parte responsável pela estiização dos input*/
+#Fe-Fe-K{
+    border-radius: 6px;
+    margin-left: 24px;
+    text-align: center;
+}
+#K-Fe-K{
+    border-radius: 6px;
+    margin-left: 54px;
+    text-align: center;
+}
+#Q-Fe-K{
+    border-radius: 6px;
+    margin-left: 35px;
+    text-align: center;
+}
+#q-Fe-K{
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+}
+#d-Fe-K{
+    border-radius: 6px;
+    margin-left: 64px;
+    text-align: center;
+}
+#inFe-Fe-K{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inK-Fe-K{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+
 #E-Fe{
     border-radius: 6px;
     margin-left: 10px;
@@ -235,25 +277,35 @@
 
 #tau-tau{
     border-radius: 6px;
-    margin-left: 123.5px;
+    margin-left: 138px;
     text-align: center;
 }
-#Va-tau{
-    border-radius: 6px;
-    margin-left: 14px;
-    text-align: center;
-}
-#Vb-tau{
+#U-tau{
     border-radius: 6px;
     margin-left: 10px;
     text-align: center;
 }
+#Va-tau{
+    border-radius: 6px;
+    margin-left: 28px;
+    text-align: center;
+}
+#Vb-tau{
+    border-radius: 6px;
+    margin-left: 24px;
+    text-align: center;
+}
 #q-tau{
     border-radius: 6px;
-    margin-left: 61px;
+    margin-left: 75px;
     text-align: center;
 }
 #intau-tau{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inU-tau{
     border-radius: 6px;
     width: 121.1px;
     text-align: center;
@@ -271,25 +323,35 @@
 
 #E-E-U{
     border-radius: 6px;
-    margin-left: 60.5px;
+    margin-left: 136px;
     text-align: center;
 }
-#Va-E-U{
-    border-radius: 6px;
-    margin-left: 14px;
-    text-align: center;
-}
-#Vb-E-U{
+#U-E-U{
     border-radius: 6px;
     margin-left: 10px;
     text-align: center;
 }
+#Va-E-U{
+    border-radius: 6px;
+    margin-left: 89.5px;
+    text-align: center;
+}
+#Vb-E-U{
+    border-radius: 6px;
+    margin-left: 86px;
+    text-align: center;
+}
 #d-E-U{
     border-radius: 6px;
-    margin-left: 116px;
+    margin-left: 191px;
     text-align: center;
 }
 #inE-E-U{
+    border-radius: 6px;
+    width: 121.1px;
+    text-align: center;
+}
+#inU-E-U{
     border-radius: 6px;
     width: 121.1px;
     text-align: center;
