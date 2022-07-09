@@ -503,6 +503,8 @@ function equacao6(resultado, resposta) {
         valor = (Number(t) * 10** Number(potenciat) - (Number(q) * 10** potenciasub1 * Number(Va) * 10** Number(potenciaVa))) / - Number(q)
         equacaoResultado = `Vb = ${valor} • 10^(${- potenciasub1}) <i>V</i>`
 
+    } else if (va.length != 0 && Vb.length != 0 && t.length ==0 && q.length == 0) {
+        equacaoResultado = `U = ${U} <i>V</i>`
     }
     final(resposta, resultado, equacaoResultado)
 }
