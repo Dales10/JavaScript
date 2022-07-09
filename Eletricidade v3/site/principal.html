@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Eletricidade</h1>
+    </header>
+    
+    <section class="container">
+        <div>
+            <label id="labelInicial" for="formula">Escolha a fórmula que deseja usar:</label><br>
+            <select name="formula" id="formula" onchange="formulas()">
+                <option selected disabled>Escolher</option>
+                <option value="equacao01">Fe = K • |Q| • |q|/ d²</option>
+                <option value="equacao02">Fe = E • |q|</option>
+                <option value="equacao03">E = K • |Q|/ d²</option>
+                <option value="equacao04">V = Epe/ q</option>
+                <option value="equacao05">V = K • Q/ d</option>
+                <option value="equacao06">Epe = K • Q • q/ d</option>
+                <option value="equacao07">t = q • U</option>
+                <option value="equacao08">E = U/ d</option>
+            </select>
+            <input type="button" value="Selecionar" id="selecionar">
+        </div>
+        
+        <div id="formulasImagens"><img src="../imagens/elétrica.jpg" alt="elétrica" id="eletrica"></div>
+    </section>
+
+    <footer><a href="https://www.instagram.com/eci_areial/" target="_blank" rel="external">&copy;ECI Areial</a></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

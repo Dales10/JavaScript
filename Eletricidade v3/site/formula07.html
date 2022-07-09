@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Trabalho</h1>
+    </header>
+    
+    <section>
+        <form>
+            <div class="centralizar">
+                <div class="div">
+                    <label class="label" for="t">Trabalho (τ):</label><br>
+                    <label class="label" for="q">Carga de Prova (q):</label><br>
+                    <label class="label" for="U">Diferença de Potencial (U):</label><br>
+                    <label class="label" for="Va">Potencial Elétrico A (V<sub>A</sub>):</label><br>
+                    <label class="label" for="Vb">Potencial Elétrico B(V<sub>B</sub>):</label>
+                </div>
+                <div class="div">
+                    <input type="text" class="input0" id="t" onkeyup="iniciar(6)"><br>
+                    <input type="text" class="input0" id="q" onkeyup="iniciar(6)"><br>
+                    <input type="text" class="input0" id="U" onkeyup="iniciar(6)"><br>
+                    <input type="text" class="input0" id="Va" onkeyup="iniciar(6)"><br>
+                    <input type="text" class="input0" id="Vb" onkeyup="iniciar(6)">
+                </div>
+                <div class="div">
+                    <input type="text" class="input1" id="t-Potencia" onkeyup="iniciar(6)"><br>
+                    <select name="submultiplos1" id="submultiplos1" class="submultiplos" onchange="iniciar(6)">
+                        <option value="0">none | 10^(0)</sub></option>
+                        <option value="-1">d - deci | 10^(-1)</option>
+                        <option value="-2">c - centi | 10^(-2)</option>
+                        <option value="-3">m - mili | 10^(-3)</option>
+                        <option value="-4">10^(-4)</option>
+                        <option value="-5">10^(-5)</option>
+                        <option value="-6">μ - micro | 10^(-6)</option>
+                        <option value="-7">10^(-7)</option>
+                        <option value="-8">10^(-8)</option>
+                        <option value="-9">n - nano | 10^(-9)</option>
+                        <option value="-10">10^(-10)</option>
+                        <option value="-11">10^(-11)</option>
+                        <option value="-12">p - pico | 10^(-12)</option>
+                    </select><br>
+                    <input type="text" class="input1" id="U-Potencia" onkeyup="iniciar(6)"><br>
+                    <input type="text" class="input1" id="Va-Potencia" onkeyup="iniciar(6)"><br>
+                    <input type="text" class="input1" id="Vb-Potencia" onkeyup="iniciar(6)">
+                </div>
+            </div>
+            
+            <input type="reset" value="Limpar" id="limpar">
+        </form>
+    </section>
+
+    <div id="resultado"></div>
+
+    <div id="voltar">
+        <p><a href="principal.html"><img src="../imagens/voltar.png" alt="voltar"><br>Voltar</a></p>
+    </div>
+
+    <footer><a href="https://www.instagram.com/eci_areial/" target="_blank" rel="external">&copy;ECI Areial</a></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

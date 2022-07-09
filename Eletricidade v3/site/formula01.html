@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Fórmula da Lei de Coulomb</h1>
+    </header>
+    
+    <section>
+        <form>
+            <div class="centralizar">
+                <div class="div">
+                    <label class="label" for="Fe">Força Elétrica (F<sub>e</sub>):</label><br>
+                    <label class="label" for="K">Constante (K):</label><br>
+                    <label class="label" for="Q">Carga Fonte (Q):</label><br>
+                    <label class="label" for="q">Carga de Prova (q):</label><br>
+                    <label class="label" for="d">Distância (d<sup>2</sup>):</label>
+                </div>
+                <div class="div">
+                    <input type="text" class="input0" id="Fe" onkeyup="iniciar(0)"><br>
+                    <input type="text" class="input0"id="K" placeholder="9" onkeyup="iniciar(0)"><br>
+                    <input type="text" class="input0" id="Q" onkeyup="iniciar(0)"><br>
+                    <input type="text" class="input0" id="q" onkeyup="iniciar(0)"><br>
+                    <input type="text" class="input0" id="d" onkeyup="iniciar(0)">
+                </div>
+                <div class="div">
+                    <input type="text" class="input1" id="Fe-Potencia" onkeyup="iniciar(0)"><br>
+                    <input type="text" class="input1" id="K-Potencia" placeholder="10(^9)" onkeyup="iniciar(0)"><br>
+                    <select name="submultiplos0" id="submultiplos0" class="submultiplos" onchange="iniciar(0)">
+                        <option value="0">none | 10^(0)</sub></option>
+                        <option value="-1">d - deci | 10^(-1)</option>
+                        <option value="-2">c - centi | 10^(-2)</option>
+                        <option value="-3">m - mili | 10^(-3)</option>
+                        <option value="-4">10^(-4)</option>
+                        <option value="-5">10^(-5)</option>
+                        <option value="-6">μ - micro | 10^(-6)</option>
+                        <option value="-7">10^(-7)</option>
+                        <option value="-8">10^(-8)</option>
+                        <option value="-9">n - nano | 10^(-9)</option>
+                        <option value="-10">10^(-10)</option>
+                        <option value="-11">10^(-11)</option>
+                        <option value="-12">p - pico | 10^(-12)</option>
+                    </select><br>
+                    <select name="submultiplos1" id="submultiplos1" class="submultiplos" onchange="iniciar(0)">
+                        <option value="0">none | 10^(0)</sub></option>
+                        <option value="-1">d - deci | 10^(-1)</option>
+                        <option value="-2">c - centi | 10^(-2)</option>
+                        <option value="-3">m - mili | 10^(-3)</option>
+                        <option value="-4">10^(-4)</option>
+                        <option value="-5">10^(-5)</option>
+                        <option value="-6">μ - micro | 10^(-6)</option>
+                        <option value="-7">10^(-7)</option>
+                        <option value="-8">10^(-8)</option>
+                        <option value="-9">n - nano | 10^(-9)</option>
+                        <option value="-10">10^(-10)</option>
+                        <option value="-11">10^(-11)</option>
+                        <option value="-12">p - pico | 10^(-12)</option>
+                    </select><br>
+                    <select name="distancia" id="distancia" onchange="iniciar(0)">
+                        <option value="3">km | 10^(3)</option>
+                        <option value="2">hm | 10^(2)</option>
+                        <option value="1">dam | 10^(1)</option>
+                        <option value="0" selected>m | 10^(0)</option>
+                        <option value="-1">dm | 10^(-1)</option>
+                        <option value="-2">cm | 10^(-2)</option>
+                        <option value="-3">mm | 10^(-3)</option>
+                    </select>
+                </div>
+            </div>
+            <input type="reset" value="Limpar" id="limpar">
+        </form>
+    </section>
+
+    <div id="resultado"></div>
+    
+    <div id="voltar">
+        <p><a href="principal.html"><img src="../imagens/voltar.png" alt="voltar"><br>Voltar</a></p>
+    </div>
+
+    <footer><a href="https://www.instagram.com/eci_areial/" target="_blank" rel="external">&copy;ECI Areial</a></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

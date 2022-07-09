@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Campo Elétrico</h1>
+    </header>
+
+    <section>
+        <form>
+            <div class="centralizar">
+                <div class="div">
+                    <label class="label" for="E">Campo Elétrico (E):</label><br>
+                    <label class="label" for="U">Diferença de Potencial (U):</label><br>
+                    <label class="label" for="Va">Potencial Elétrico A (V<sub>A</sub>):</label><br>
+                    <label class="label" for="Vb">Potencial Elétrico B(V<sub>B</sub>):</label><br>
+                    <label class="label" for="d">Distância (d):</label>
+                </div>
+                <div class="div">
+                    <input type="text" class="input0" id="E" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input0" id="U" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input0" id="Va" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input0" id="Vb" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input0" id="d" onkeyup="iniciar(7)">
+                </div>
+                <div class="div">
+                    <input type="text" class="input1" id="E-Potencia" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input1" id="U-Potencia" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input1" id="Va-Potencia" onkeyup="iniciar(7)"><br>
+                    <input type="text" class="input1" id="Vb-Potencia" onkeyup="iniciar(7)"><br>
+                    <select name="distancia" id="distancia" onchange="iniciar(7)">
+                        <option value="3">km | 10^(3)</option>
+                        <option value="2">hm | 10^(2)</option>
+                        <option value="1">dam | 10^(1)</option>
+                        <option value="0" selected>m | 10^(0)</option>
+                        <option value="-1">dm | 10^(-1)</option>
+                        <option value="-2">cm | 10^(-2)</option>
+                        <option value="-3">mm | 10^(-3)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <input type="reset" value="Limpar" id="limpar">
+        </form>
+    </section>
+
+    <div id="resultado"></div>
+
+    <div id="voltar">
+        <p><a href="principal.html"><img src="../imagens/voltar.png" alt="voltar"><br>Voltar</a></p>
+    </div>
+
+    <footer><a href="https://www.instagram.com/eci_areial/" target="_blank" rel="external">&copy;ECI Areial</a></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

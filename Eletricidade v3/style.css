@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+body{
+    background: #13151f;
+    color: white;
+    font: normal normal 1.5em Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color: #c4c4c4;
+    text-align: center;
+}
+#title {
+    font-size: 1.5em;
+}
+.container, section, .resposta{
+    background-color: #2f3136;
+    margin: auto;
+    border-radius: 0.8em;
+    width: 18.3em;
+    padding: 1em;
+    border: 0.1em solid rgb(68, 64, 64);
+    box-shadow: 0.5em 0.5em 3em rgb(12, 12, 12);
+}
+.resposta {
+    margin-top: 1em;
+    padding-top: 0.5em;
+    text-align: center;
+}
+.container{
+    text-align: center;
+}
+#formulasImagens {
+    margin-top: 1em;
+    width: auto;
+    height: 7.1em;
+    background-color: white;
+    border-radius: 0.3em;
+}
+#eletrica {
+    width: 18.5em;
+    height: 7.1em;
+    border-radius: 0.26em;
+}
+#labelInicial {
+    color: #dcdcdc;
+}
+#formula, #selecionar, #limpar{
+    border-radius: 1em;
+    color: #141313;
+    background-color: #848181;
+    border: none;
+    text-align: center;
+}
+.submultiplos, #distancia{
+    border-radius: 0.5em;
+    text-align: center;
+    height: 22px;
+    width: 9em;
+}
+.label {
+    font-size: 0.8em;
+    text-align: left;
+}
+.input0 {
+    text-align: center;
+    width: 6em;
+    border-radius: 0.5em;
+}
+.input1 {
+    width: 8.4em;
+    border-radius: 0.5em;
+    text-align: center;
+}
+footer{
+    margin-top: 1.4em;
+    text-align: center;
+    font-size: 1em;
+}
+.div {
+    display: table;
+    display: table-cell;
+}
+a{
+    color: #878dab;
+    text-decoration: none;
+    font-size: 0.7em;
+}
+a:hover{
+    color: #5d5dff;
+}
+a:visited{
+    color: rgb(66, 66, 147);
+}
+#voltar{
+    text-align: center;
+}
+.centralizar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#limpar {
+    margin-top: 2em;
+    margin-left: 14.6em;
+}
